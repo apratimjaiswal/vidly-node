@@ -1,4 +1,5 @@
-const Joi = require('joi');
+// const Joi = require('joi');
+const Joi = require('joi-oid');
 //const moment = require('moment');
 const validate = require('../middleware/validate');
 const { Rental } = require('../models/rental');
