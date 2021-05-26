@@ -1,0 +1,21 @@
+winston custom logger
+- index.js (const logger = require('./logger'))
+- middleware/error.js
+- startup/db.js
+
+- dev-logger logs everything to uncaughtExceptions.log. Also to uncaughtRejections.log and Console.
+- prod-logger doesn't log to any Files/MongoDB yet
+
+winston (original logger from package)
+- startup/logging.js
+
+winston levels
+//  error: 0
+//  warn: 1
+//  info: 2 // default level
+//  http: 3
+//  verbose: 4
+//  debug: 5
+//  silly: 6
+
+//  Levels higher than a given level are not printed
