@@ -33,7 +33,10 @@ router.post('/', async (req, res) => {
     //We set the JWT in header and send the response to the user
     /*const token = jwt.sign({ _id: user._id }, config.get('jwtPrivateKey'));*/
     const token = user.generateAuthToken();
-    res.header('x-auth-token', token).send(_.pick(user, ['_id', 'name', 'email']));
+    res
+        .header('x-auth-token', token)
+        .header('access-control-expose-headers', 'x-auth-token')
+        .send(_.pick(user, ['_id', 'name', 'email']));
 });
 
 module.exports = router;
